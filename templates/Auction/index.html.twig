@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista aukcji</h1>
+    {% for  auction in auctions %}
+        <a href="{{ path('auction_details',{'id' : auction.id}) }}">{{ auction.title }}</a><hr>
+        {{ auction.description }}<hr>
+        {{ auction.price }}<hr>
+    {% endfor %}
+{% endblock %}

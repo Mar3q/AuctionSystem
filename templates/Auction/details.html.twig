@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Szczegóły</h1>
+    {{ auction.title }}
+    {{ auction.description }}
+    {{ auction.price }}
+
+    <a href="{{ path('auction_index') }}">Powrót</a>
+{% endblock %}
