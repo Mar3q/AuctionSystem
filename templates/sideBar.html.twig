@@ -1,0 +1,36 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% endblock %}
+
+<!-- Sidebar Holder -->
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>Menu</h3>
+    </div>
+    <ul class="list-unstyled components">
+        <p>Nagłówek Menu</p>
+        <li>
+            <a href="{{ path('auction_index') }}">Home</a>
+        </li>
+        <li>
+            <a href="#dietySubmenu" data-toggle="collapse" aria-expanded="false">Aukcje</a>
+            <ul class="collapse list-unstyled" id="dietySubmenu">
+                <li><a href="{{ path('auction_add') }}">Dodaj aukcje</a></li>
+                <li><a href="{{ path('auction_index') }}">Lista aukcji</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+        <li><a href="#" class="download">Download</a></li>
+    </ul>
+</nav>

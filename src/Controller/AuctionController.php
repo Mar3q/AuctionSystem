@@ -31,7 +31,7 @@ class AuctionController extends Controller
     public function detailsAction($id)
     {
         $auction = $this->getDoctrine()->getRepository(Auction::class)->findOneBy(["id"=>$id]);
-        return $this->render("Auction/details.html.twig");
+        return $this->render("Auction/details.html.twig", ["auction" => $auction]);
     }
 
     /**
